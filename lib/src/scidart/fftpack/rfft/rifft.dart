@@ -59,7 +59,10 @@ Array rifft(ArrayComplex x) {
   var irfft = ifft(xn);
 
   // absulute value of the list
-  var xReal = arrayComplexAbs(irfft);
+  var xReal = Array.fixed(irfft.length);
+  for (int i = 0; i < irfft.length; i++) {
+    xReal[i] = irfft[i].real;
+  }
 
   return xReal;
 }
